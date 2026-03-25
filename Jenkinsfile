@@ -1,5 +1,10 @@
 pipeline{
     agent any
+
+    tools {
+        nodejs 'node-22'
+    }
+
     stages{
         stage('Fetching Code Changes Detected'){
             steps{
@@ -15,7 +20,7 @@ pipeline{
 
         stage('Run application'){
     steps{
-        sh 'nohup npm run dev &'
+        sh 'npm run dev'
     }
 }
 
